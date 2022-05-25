@@ -8,14 +8,18 @@ import javax.persistence.Id;
 
 /*
  * attributs de class -> fait
+ */
+
+//  /!\ l'attribut date est en String par defaut /!\ à voir le type que tu préfères 
+
+ /* 
  * constructeur vide et complet -> fait 
  * getters et setters -> fait
  * to string -> à faire si besoin 
- * 
 */
 
 @Entity
-public class Conseil {
+public class Actualite {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) //génération automatique des id
 	private Long id; 
@@ -25,13 +29,17 @@ public class Conseil {
 	
 	@Column(nullable = false) //la description ne peut pas être null en BDD
 	private String description;
+	
+	@Column(nullable = true) //la date peut être nulle en BDD
+	private String date;
 
-	public Conseil() {
+	public Actualite() {
 	}
 
-	public Conseil(String titre, String description) {
+	public Actualite(String titre, String description, String date) {
 		this.titre = titre;
 		this.description = description;
+		this.date = date;
 	}
 
 	public Long getId() {
@@ -56,12 +64,14 @@ public class Conseil {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	} 
-	
-	
-	
-	
-
-
-
+		
 }

@@ -10,15 +10,13 @@ import javax.persistence.Id;
  * attributs de class -> fait
  * constructeur vide et complet -> fait 
  * getters et setters -> fait
- * to string -> à faire si besoin 
- * 
+ * to string -> à faire si besoin  
 */
-
 @Entity
-public class Conseil {
+public class Recommandation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) //génération automatique des id
-	private Long id; 
+	private Long id;
 	
 	@Column(nullable = false) //le titre ne peut pas être null en BDD
 	private String titre; 
@@ -26,10 +24,10 @@ public class Conseil {
 	@Column(nullable = false) //la description ne peut pas être null en BDD
 	private String description;
 
-	public Conseil() {
+	public Recommandation() {
 	}
 
-	public Conseil(String titre, String description) {
+	public Recommandation(String titre, String description) {
 		this.titre = titre;
 		this.description = description;
 	}
@@ -56,12 +54,7 @@ public class Conseil {
 
 	public void setDescription(String description) {
 		this.description = description;
-	} 
+	}
 	
 	
-	
-	
-
-
-
 }
