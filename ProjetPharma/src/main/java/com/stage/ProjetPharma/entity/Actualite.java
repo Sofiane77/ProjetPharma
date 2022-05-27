@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /*
  * attributs de class -> fait
  */
@@ -20,6 +22,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Actualite {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO) //génération automatique des id
 	private Long id; 
